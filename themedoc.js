@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Criação do fundo overlay escuro
   const overlay = document.createElement("div");
+  overlay.id = "popup-overlay";
   overlay.style.position = "fixed";
   overlay.style.top = "0";
   overlay.style.left = "0";
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
   overlay.style.justifyContent = "center";
   overlay.style.alignItems = "center";
   overlay.style.zIndex = "9999";
-  
+
   // Criação da popup
   const popup = document.createElement("div");
   popup.style.width = "90%";
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
   message.style.color = "#333333";
   message.style.fontSize = "24px";
   message.style.marginBottom = "20px";
-  
+
   const button = document.createElement("button");
   button.innerText = "ENTRAR";
   button.style.padding = "10px 20px";
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Fechar a popup ao clicar no botão
   button.addEventListener("click", function() {
-    document.body.removeChild(overlay);
+    overlay.style.display = "none";
   });
 
   // Adiciona o texto e botão à popup
